@@ -1,0 +1,16 @@
+.header {
+  color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-transform: uppercase;
+}
+.btn-light-blue {
+  color: rgb(255, 255, 255);
+  background-color: rgb(49, 74, 118);
+  border-color: rgb(49, 74, 118);
+}
+.btn-light-blue:hover {
+  color: rgb(254, 254, 254);
+  background-color: rgb(31, 44, 65);
+  border-color: rgb(31, 44, 65);
+}
