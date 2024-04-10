@@ -1,3 +1,4 @@
+const apiKey = "b9f2db9b3f2f4578b91bae609e09d7ca";
 const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
 const newsContainer = document.getElementById("newsContainer");
 const searchInput = document.getElementById("searchInput");
