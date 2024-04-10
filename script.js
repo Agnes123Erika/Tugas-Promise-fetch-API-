@@ -1,4 +1,4 @@
-const apiKey = "YOUR_API_KEY"; // Ganti dengan API key Anda
+const apiKey = "YOUR_API_KEY"; 
 const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
 const newsContainer = document.getElementById("newsContainer");
 const searchInput = document.getElementById("searchInput");
