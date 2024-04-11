@@ -1,5 +1,5 @@
 const apiKey = "b9f2db9b3f2f4578b91bae609e09d7ca";
-const apiUrl = `https://newsapi.org/v2/top-headlines?country=id&apiKey=b9f2db9b3f2f4578b91bae609e09d7ca`;
+const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=b9f2db9b3f2f4578b91bae609e09d7ca`;
 const newsContainer = document.getElementById("newsContainer");
 const searchInput = document.getElementById("searchInput");
 const searchButton = document.getElementById("searchButton");
@@ -14,14 +14,22 @@ searchButton.addEventListener("click", () => {
 });
 
 function fetchNews(searchTerm) {
-  const url = `https://newsapi.org/v2/top-headlines?q=${searchTerm}&apiKey=b9f2db9b3f2f4578b91bae609e09d7ca`;
+  const url = `https://newsapi.org/v2/top-headlines?q=${searchTerm}&apiKey=${apiKey}`;
   axios
     .get(url)
     .then((response) => {
       displayNews(response.data.articles);
     })
-    .catch((error) => console.error(error));
+    .catch((error) => {
+      console.error(error);
+      if (error.response && error.response.status === 401) {
+        alert("Authentication failed. Please check your API key or contact the administrator.");
+      } else {
+        alert("An error occurred while fetching the news. Please try again later.");
+      }
+    });
 }
+
 
 function displayNews(articles) {
   newsContainer.innerHTML = "";
